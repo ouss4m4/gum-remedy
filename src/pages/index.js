@@ -38,7 +38,7 @@ const ToothAche = ({ data }) => {
           <a href="https://fabining-polives.icu/click" target="_blank">
             <Image fluid={main} alt={`main`} />
           </a>
-          <Share
+          {/* <Share
             socialConfig={{
               twitterHandle,
               config: {
@@ -47,7 +47,7 @@ const ToothAche = ({ data }) => {
               },
             }}
             tags={tags}
-          />
+          /> */}
         </h1>
         <h3 className="subtitle">
           Do This 60 Seconds Dental Trick Before Going to Bed Tonight To Rebuild

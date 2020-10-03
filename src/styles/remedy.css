@@ -3,6 +3,7 @@
   flex-direction: column;
   margin: 0 auto;
   max-width: 980px;
+  padding: 6px;
 }
 
 .header {
@@ -108,5 +109,8 @@
   }
   .main p {
     font-size: 1em;
+  }
+  .avatar {
+    width: 150px;
   }
 }
