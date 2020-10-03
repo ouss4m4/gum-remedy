@@ -54,9 +54,59 @@
   font-size: 1.5em;
 }
 
-.quote p {
-  border-left: 2px solid black;
-  padding-left: 8px;
-  font-style: italic;
-  font-size: 1.1em;
+.myButton {
+  box-shadow: -1px 9px 0px -4px #bee2f9;
+  border-radius: 13px;
+  border: 2px solid #3866a3;
+  display: inline-block;
+  cursor: pointer;
+  color: #14396a;
+  font-family: "Domine", sans-serif;
+  font-weight: 700;
+  font-size: 23px;
+  padding: 27px 50px;
+  text-decoration: none;
+  margin: 0 auto;
+}
+.myButton:hover {
+  background: linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
+  background-color: #468ccf;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.btn-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  width: 120px;
+}
+@media only screen and (max-width: 600px) {
+  .header {
+    font-size: 1em;
+    padding: 4px;
+  }
+  .logo {
+    width: 60px;
+    height: 60px;
+    display: none;
+  }
+
+  .title {
+    font-size: 1.5em;
+  }
+  .intro {
+    font-size: 1em;
+  }
+  .subtitle {
+    font-size: 1.5em;
+  }
+  .main p {
+    font-size: 1em;
+  }
 }

@@ -6,9 +6,10 @@ import "../styles/remedy.css"
 
 const GumRemedy = ({ data }) => {
   console.log(data)
-  const { twitterHandle, url } = data?.site?.siteMetadata
+  const twitterHandle = ""
   const tags = []
-  const avatar = data?.avatar?.childImageSharp?.fixed
+
+  const avatar = data?.avatar?.childImageSharp?.fluid
   const video = data?.video?.childImageSharp?.fluid
   const logo = data?.logo?.childImageSharp?.fluid
   const main = data?.main?.childImageSharp?.fluid
@@ -16,7 +17,7 @@ const GumRemedy = ({ data }) => {
     <div className="wrap">
       <p style={{ textAlign: "center", margin: 0, padding: 0 }}>Advertorial</p>
       <div className="header">
-        <Image fixed={avatar} alt={"scientist"} className="avatar" />
+        <Image fluid={avatar} alt={"scientist"} className="avatar" />
         <div className="intro">
           <p>
             <strong>Oral Hygiene Experts</strong>
@@ -42,7 +43,7 @@ const GumRemedy = ({ data }) => {
             socialConfig={{
               twitterHandle,
               config: {
-                url: `${url}/gumbleeding`,
+                url: `https://gum-remedy.com/gum-remedy`,
                 title: "Gum Bleeding Remedy",
               },
             }}
@@ -75,7 +76,7 @@ const GumRemedy = ({ data }) => {
         </ul>
 
         <strong>
-          <p>Until now!</p>
+          <p>But now you can !</p>
         </strong>
         <ul>
           <li>
@@ -90,11 +91,6 @@ const GumRemedy = ({ data }) => {
             <p>Restore, Protect Teeth And Stop Gum receding</p>
           </li>
         </ul>
-
-        <p>
-          Just watch this presentation to learn how to takes steps to strengthen
-          your gums and avoid future dental issues{" "}
-        </p>
 
         <div className="btn-wrap">
           <a
@@ -115,7 +111,7 @@ const GumRemedy = ({ data }) => {
         socialConfig={{
           twitterHandle,
           config: {
-            url: `${url}/gumbleeding`,
+            url: `https://gum-remedy.com/gum-remedy`,
             title: "Gum Bleeding Remedy",
           },
         }}
@@ -141,14 +137,12 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-        url
-        twitterHandle
       }
     }
     avatar: file(absolutePath: { regex: "/avatar.png/" }) {
       childImageSharp {
-        fixed(width: 135, height: 120, quality: 95) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 180) {
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
