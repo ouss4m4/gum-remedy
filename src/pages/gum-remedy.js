@@ -5,7 +5,6 @@ import Share from "../components/share"
 import "../styles/remedy.css"
 
 const GumRemedy = ({ data }) => {
-  console.log(data)
   const twitterHandle = ""
   const tags = []
 
