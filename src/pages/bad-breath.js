@@ -38,7 +38,7 @@ const BadBreath = ({ data }) => {
           <a href="https://fabining-polives.icu/click" target="_blank">
             <Image fluid={main} alt={`main`} />
           </a>
-          <Share
+          {/* <Share
             socialConfig={{
               twitterHandle,
               config: {
@@ -47,7 +47,7 @@ const BadBreath = ({ data }) => {
               },
             }}
             tags={tags}
-          />
+          /> */}
         </h1>
         <h3 className="subtitle">
           Bad Breath Means Bacteria Caused An Inflammation Of The Gums & Can Now
