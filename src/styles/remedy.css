@@ -139,11 +139,6 @@ body {
     font-size: 1em;
     padding: 4px;
   }
-  .logo {
-    width: 60px;
-    height: 60px;
-    display: none;
-  }
 
   .title {
     font-size: 1.2em;
@@ -157,5 +152,9 @@ body {
   }
   .main p {
     font-size: 1em;
+  }
+  .avatar {
+    width: 150px;
+    display: none;
   }
 }
