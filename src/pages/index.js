@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 import Share from "../components/share"
 import "../styles/remedy.css"
 
-const ToothAche = ({ data }) => {
+const ToothAche = ({ data, location }) => {
   const twitterHandle = ""
   const tags = []
 
@@ -12,19 +12,27 @@ const ToothAche = ({ data }) => {
   const video = data?.video?.childImageSharp?.fluid
   const logo = data?.logo?.childImageSharp?.fluid
   const main = data?.main?.childImageSharp?.fluid
+  console.log("location?", location)
   return (
     <div className="wrap">
-      <p style={{ textAlign: "center", margin: 0, padding: 0 }}>Advertorial</p>
+      <p
+        style={{
+          textAlign: "center",
+          margin: "3px",
+          padding: 0,
+          fontSize: "12px",
+        }}
+      >
+        Advertorial{" "}
+      </p>
       <div className="header">
         <Image fluid={avatar} alt={"scientist"} className="avatar" />
         <div className="intro">
-          <p>
-            <strong>Oral Hygiene Experts</strong>
+          <p class="category">
+            <strong>Dental Research Group - Health News Live​</strong>
           </p>
-          <p>
-            As long as you’re not stabbing at your gums when you brush, there
-            shouldn’t be any bleeding
-          </p>
+          <p class="bread-crumb">Trending &gt; Health &gt; Oral Hygiene</p>
+          <p class="bread-crumb"> 8 septembre 2020 - 207 shares</p>
         </div>
         <Image fluid={logo} alt={"logo"} className="logo" />
       </div>
@@ -35,20 +43,21 @@ const ToothAche = ({ data }) => {
             Bad Breath Means Bacteria Caused An Inflammation Of The Gums & Can
             Now Enter Your Bloodstream
           </a>
-          <a href="https://fabining-polives.icu/click" target="_blank">
-            <Image fluid={main} alt={`main`} />
-          </a>
-          <Share
-            socialConfig={{
-              twitterHandle,
-              config: {
-                url: `https://gum-remedy.com/gum-remedy`,
-                title: "Gum Bleeding Remedy",
-              },
-            }}
-            tags={tags}
-          />
         </h1>
+        <a href="https://fabining-polives.icu/click" target="_blank">
+          <Image fluid={main} alt={`main`} />
+        </a>
+        <Share
+          socialConfig={{
+            twitterHandle,
+            config: {
+              url: location.href,
+              title: "Gum Bleeding Remedy",
+            },
+          }}
+          tags={tags}
+        />
+
         <h3 className="subtitle">
           Do This 60 Seconds Dental Trick Before Going to Bed Tonight To Rebuild
           Your Teeth & Gums And Get Rid of Tooth Decay
@@ -107,10 +116,11 @@ const ToothAche = ({ data }) => {
         <Image fluid={video} alt={`video`} />
       </a>
       <Share
+        round={true}
         socialConfig={{
           twitterHandle,
           config: {
-            url: `https://gum-remedy.com/gum-remedy`,
+            url: location.href,
             title: "Gum Bleeding Remedy",
           },
         }}

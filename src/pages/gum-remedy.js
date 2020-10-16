@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 import Share from "../components/share"
 import "../styles/remedy.css"
 
-const GumRemedy = ({ data }) => {
+const GumRemedy = ({ data, location }) => {
   const twitterHandle = ""
   const tags = []
 
@@ -12,19 +12,18 @@ const GumRemedy = ({ data }) => {
   const video = data?.video?.childImageSharp?.fluid
   const logo = data?.logo?.childImageSharp?.fluid
   const main = data?.main?.childImageSharp?.fluid
+  console.log("location?", location)
+
   return (
     <div className="wrap">
       <p style={{ textAlign: "center", margin: 0, padding: 0 }}>Advertorial</p>
       <div className="header">
         <Image fluid={avatar} alt={"scientist"} className="avatar" />
         <div className="intro">
-          <p>
-            <strong>Oral Hygiene Experts</strong>
+          <p className="category">
+            <strong>Dental Research Group - Health News Live​</strong>
           </p>
-          <p>
-            As long as you’re not stabbing at your gums when you brush, there
-            shouldn’t be any bleeding
-          </p>
+          <p className="bread-crumb">Trending &gt; Health &gt; Oral Hygiene</p>
         </div>
         <Image fluid={logo} alt={"logo"} className="logo" />
       </div>
@@ -32,74 +31,58 @@ const GumRemedy = ({ data }) => {
       <div className="main">
         <h1 className="title">
           <a href="https://fabining-polives.icu/click" target="_blank">
-            Do This 60 Seconds Dental Trick Before Going to Bed Tonight To
-            Rebuild Your Teeth & Gums And Get Rid of Tooth Decay
+            This Banned Fruit May Improve Your Gums By 90% (Latest Research)
           </a>
+        </h1>
+        <div id="fruit">
           <a href="https://fabining-polives.icu/click" target="_blank">
             <Image fluid={main} alt={`main`} />
           </a>
+        </div>
+        <div id="share">
           <Share
             socialConfig={{
               twitterHandle,
               config: {
-                url: `https://gum-remedy.com/gum-remedy`,
+                url: location.href,
                 title: "Gum Bleeding Remedy",
               },
             }}
             tags={tags}
           />
-        </h1>
-        <h3 className="subtitle">
+        </div>
+        {/* <h3 className="subtitle">
           Bad Breath Means Bacteria Caused An Inflammation Of The Gums & Can Now
           Enter Your Bloodstream
-        </h3>
-        <p>
-          <strong>
-            It all starts with a dangerous bacteria lurking deep inside your
-            gums…
-          </strong>
-        </p>
-        <ul>
-          <li>
-            <p>
-              3 out of 5 Americans suffer from Recessed gums and tooth decay
-            </p>
-          </li>
-          <li>
-            <p>
-              Recent studies have shown that up to 65% of people will suffer
-              through the pain, in order to avoid the costs of dental
-              implants...
-            </p>
-          </li>
-        </ul>
+        </h3> */}
+        <div className="present">
+          <p style={{ marginTop: "1em" }}>
+            Dentists can scream this is “<b>medically impossible</b>” all they
+            want…
+          </p>
+          <p>But they can’t deny the lab test results…</p>
+          <p>
+            Every single patient who ate this fruit experienced a dramatic
+            improvement in their teeth and gums health within days…
+          </p>
+          <p>They’ve rejuvenated their gums by 90%…</p>
+          <p>And relieved pesky bad breath and toothaches…</p>
+          <p>While some of them even reported having stronger teeth!</p>
+          <p>
+            The <b>Cheap Fruit</b> That May Soon Make Dentists Almost Useless
+            (They Tried to Ban It)
+          </p>
 
-        <strong>
-          <p>But now you can !</p>
-        </strong>
-        <ul>
-          <li>
-            <p>
-              Eliminate the bacteria that continues to grow inside your mouth
-            </p>
-          </li>
-          <li>
-            <p>Stop Gum Bleeding When You Brush and At Night</p>
-          </li>
-          <li>
-            <p>Restore, Protect Teeth And Stop Gum receding</p>
-          </li>
-        </ul>
-
-        <div className="btn-wrap">
-          <a
-            className="myButton"
-            href="https://fabining-polives.icu/click"
-            target="_blank"
-            rel="noreferrer"
-          >
-            CLICK TO WATCH
-          </a>
+          <div className="btn-wrap">
+            <a
+              className="myButton"
+              href="https://fabining-polives.icu/click"
+              target="_blank"
+              rel="noreferrer"
+            >
+              CLICK TO WATCH
+            </a>
+          </div>
         </div>
       </div>
 
@@ -110,7 +93,7 @@ const GumRemedy = ({ data }) => {
         socialConfig={{
           twitterHandle,
           config: {
-            url: `https://gum-remedy.com/gum-remedy`,
+            url: location.href,
             title: "Gum Bleeding Remedy",
           },
         }}
@@ -159,7 +142,7 @@ export const query = graphql`
         }
       }
     }
-    main: file(absolutePath: { regex: "/main.jpg/" }) {
+    main: file(absolutePath: { regex: "/main2.png/" }) {
       childImageSharp {
         fluid(maxWidth: 1080) {
           ...GatsbyImageSharpFluid_noBase64

@@ -1,8 +1,11 @@
+body {
+  background-color: rgba(235, 235, 235, 0.62);
+}
 .wrap {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  max-width: 980px;
+  max-width: 820px;
 }
 
 .header {
@@ -13,41 +16,60 @@
   margin-top: 3px;
   justify-content: space-between;
   margin-bottom: 19px;
+  height: 80px;
+  background-color: white;
+}
+.header p {
+  margin: 0;
 }
 
 .intro {
+  flex-grow: 1;
   font-size: 1.2em;
   margin-left: 4px;
   padding-left: 8px;
 }
+.category {
+  color: #3866a3;
+}
+
+.bread-crumb {
+  font-style: italic;
+  color: grey;
+  font-size: 14px;
+}
 
 .logo {
   align-self: center;
-  width: 100px;
-  height: 100px;
-}
-.header p {
-  margin-bottom: var(--spacing-0);
+  width: 80px;
 }
 
 .main {
   padding: 1rem;
   border: 1px solid #e8e8e8;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  background-color: white;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 39px;
   text-align: center;
 }
 
+#fruit {
+  max-width: 733px;
+  margin: 0 auto;
+}
+#share {
+  padding-left: 24px;
+}
 .title a {
   text-decoration: none;
   color: black;
 }
 
 .subtitle {
-  font-size: 2rem;
+  font-size: 32px;
 }
 
 .main p {
@@ -84,9 +106,35 @@
 }
 
 .avatar {
-  width: 120px;
+  width: 90px;
 }
+
+.present p {
+  font-size: 18px;
+}
+
 @media only screen and (max-width: 600px) {
+  .wrap {
+    padding: 7px;
+    margin: 0;
+  }
+  .category {
+    color: #3866a3;
+    font-size: 0.7em;
+  }
+  #fruit {
+    max-width: 733px;
+    margin: 0 auto;
+  }
+  #share {
+    padding-left: 0;
+  }
+
+  .bread-crumb {
+    font-style: italic;
+    color: grey;
+    font-size: 14px;
+  }
   .header {
     font-size: 1em;
     padding: 4px;
@@ -98,7 +146,8 @@
   }
 
   .title {
-    font-size: 1.5em;
+    font-size: 1.2em;
+    margin-bottom: 1em;
   }
   .intro {
     font-size: 1em;

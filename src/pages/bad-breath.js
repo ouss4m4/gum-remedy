@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 import Share from "../components/share"
 import "../styles/remedy.css"
 
-const BadBreath = ({ data }) => {
+const BadBreath = ({ data, location }) => {
   const twitterHandle = ""
   const tags = []
 
@@ -18,13 +18,10 @@ const BadBreath = ({ data }) => {
       <div className="header">
         <Image fluid={avatar} alt={"scientist"} className="avatar" />
         <div className="intro">
-          <p>
-            <strong>Oral Hygiene Experts</strong>
+          <p className="category">
+            <strong>Dental Research Group - Health News Live​</strong>
           </p>
-          <p>
-            As long as you’re not stabbing at your gums when you brush, there
-            shouldn’t be any bleeding
-          </p>
+          <p className="bread-crumb">Trending &gt; Health &gt; Oral Hygiene</p>
         </div>
         <Image fluid={logo} alt={"logo"} className="logo" />
       </div>
@@ -32,8 +29,8 @@ const BadBreath = ({ data }) => {
       <div className="main">
         <h1 className="title">
           <a href="https://fabining-polives.icu/click" target="_blank">
-            Gum disease, Tooth Decay & Bad Breath have nothing to do with how
-            often you brush, This Is What You Need To Do
+            As long as you’re not stabbing at your gums when you brush, there
+            shouldn’t be any bleeding
           </a>
           <a href="https://fabining-polives.icu/click" target="_blank">
             <Image fluid={main} alt={`main`} />
@@ -42,7 +39,7 @@ const BadBreath = ({ data }) => {
             socialConfig={{
               twitterHandle,
               config: {
-                url: `https://gum-remedy.com/gum-remedy`,
+                url: location.href,
                 title: "Gum Bleeding Remedy",
               },
             }}
@@ -110,7 +107,7 @@ const BadBreath = ({ data }) => {
         socialConfig={{
           twitterHandle,
           config: {
-            url: `https://gum-remedy.com/gum-remedy`,
+            url: location.href,
             title: "Gum Bleeding Remedy",
           },
         }}
